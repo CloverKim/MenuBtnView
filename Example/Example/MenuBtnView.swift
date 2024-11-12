@@ -59,8 +59,8 @@ class MenuBtnView: UIView {
                 let str = NSString(format: "%@    ", titleNames[i])
                 if (str.length > 2) {
                     let font = UIFont.systemFont(ofSize: 15)
-                    let dict = NSDictionary(object: font, forKey: NSAttributedStringKey.font as NSCopying)
-                    let size = str.boundingRect(with: CGSize(width: CGFloat(MAXFLOAT), height: 20), options: NSStringDrawingOptions.truncatesLastVisibleLine, attributes: dict as? [NSAttributedStringKey : Any], context: nil);
+                    let dict = NSDictionary(object: font, forKey: NSAttributedString.Key.font as NSCopying)
+                    let size = str.boundingRect(with: CGSize(width: CGFloat(MAXFLOAT), height: 20), options: NSStringDrawingOptions.truncatesLastVisibleLine, attributes: dict as? [NSAttributedString.Key : Any], context: nil);
                     
                     let width = size.width - titleBtn.frame.size.width + 12
                     titleBtn.frame = CGRect(x: titleBtn.frame.origin.x - width + 28, y: titleBtn.frame.origin.y, width: titleBtn.frame.size.width + width, height: titleBtn.frame.size.height)
@@ -151,7 +151,7 @@ class MenuBtnView: UIView {
         let animationgroup = CAAnimationGroup()
         animationgroup.animations = [scaleAnimation, opacityAnimation]
         animationgroup.duration = 0.3
-        animationgroup.fillMode = kCAFillModeForwards
+        animationgroup.fillMode = CAMediaTimingFillMode.forwards
         
         return animationgroup
     }

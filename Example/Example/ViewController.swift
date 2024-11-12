@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         
         actionBtn.frame = CGRect(x: 100, y: 100, width: 69, height: 69)
         actionBtn.autoresizingMask = [.flexibleLeftMargin, .flexibleTopMargin]
-        actionBtn.setImage(#imageLiteral(resourceName: "addItemStart"), for: UIControlState())
+        actionBtn.setImage(#imageLiteral(resourceName: "addItemStart"), for: UIControl.State())
         actionBtn.backgroundColor = UIColor.clear
         actionBtn.layer.cornerRadius = actionBtn.frame.size.width / 2
         actionBtn.addTarget(self, action:#selector(showMenu), for: .touchUpInside)
